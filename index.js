@@ -8,7 +8,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const TOKEN = process.env.GITHUB_TOKEN;
 
-// ✅ Get Repositories
+// Get Repositories
 app.get('/repos/:username', async (req, res) => {
   try {
     const { username } = req.params;
@@ -35,7 +35,7 @@ app.get('/repos/:username', async (req, res) => {
   }
 });
 
-// ✅ Get Issues
+// Get Issues
 app.get('/issues/:owner/:repo', async (req, res) => {
   try {
     const { owner, repo } = req.params;
@@ -63,7 +63,7 @@ app.get('/issues/:owner/:repo', async (req, res) => {
   }
 });
 
-// ✅ Create Issue
+// Create Issue
 app.post('/create-issue', async (req, res) => {
   try {
     const { owner, repo, title, body } = req.body;
